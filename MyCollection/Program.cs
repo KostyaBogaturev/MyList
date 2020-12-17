@@ -13,7 +13,7 @@
         /// <param name="args">standart argument.</param>
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Starter.Run();
         }
     }
 }
