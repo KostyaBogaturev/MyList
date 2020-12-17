@@ -74,19 +74,21 @@
         /// <param name="item">item wtch we wanna paste.</param>
         public void Insert(int index, T item)
         {
-            if (index < 0 || index >= this.array.Length)
+            if (index < 0 || index >= this.count)
             {
                 return;
             }
 
             var arr = new T[this.array.Length + 1];
-            Array.Copy(this.array, arr, index - 1);
+            Array.Copy(this.array, arr, index);
             arr[index] = item;
 
             for (int i = index; i < this.array.Length; i++)
             {
                 arr[i + 1] = this.array[i];
             }
+
+            this.array = arr;
         }
 
         /// <summary>
